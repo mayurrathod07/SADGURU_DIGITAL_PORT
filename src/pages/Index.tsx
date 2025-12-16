@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Camera, Plane } from "lucide-react";
+import { ArrowRight, Camera, Plane, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ImageSlider } from "@/components/ImageSlider";
+import { CameraAnimation } from "@/components/CameraAnimation";
 import heroImage from "@/assets/hero-landscape.jpg";
 import droneImage from "@/assets/drone-coastal.jpg";
 import weddingImage from "@/assets/wedding-portrait.jpg";
@@ -34,38 +36,48 @@ const Index = () => {
             alt="Dramatic landscape photography"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
         </div>
 
         <motion.div
           variants={stagger}
           initial="initial"
           animate="animate"
-          className="relative z-10 text-center section-padding max-w-4xl mx-auto pt-24"
+          className="relative z-10 text-center section-padding max-w-5xl mx-auto pt-24"
         >
-          <motion.p
+          <motion.div variants={fadeUp} className="flex justify-center mb-8">
+            <CameraAnimation />
+          </motion.div>
+          
+          <motion.div
             variants={fadeUp}
-            className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 backdrop-blur-sm text-accent mb-6"
           >
-            Photography & Aerial Imaging
-          </motion.p>
+            <Sparkles size={16} />
+            <span className="text-sm tracking-wider uppercase">Sadguru Digital Photography</span>
+          </motion.div>
+          
           <motion.h1
             variants={fadeUp}
             className="font-display text-5xl md:text-7xl lg:text-8xl font-medium leading-tight mb-6"
           >
-            Stories Told
+            Capturing Your
             <br />
-            <span className="italic text-accent">From Every Angle</span>
+            <span className="italic text-accent">Precious Moments</span>
           </motion.h1>
           <motion.p
             variants={fadeUp}
             className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10"
           >
-            Professional photography and certified drone services, capturing your vision with artistry and precision.
+            Professional photography and certified drone services in Nandurbar. 
+            Let us tell your story through stunning visuals.
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" asChild>
-              <Link to="/portfolio">View Portfolio</Link>
+              <Link to="/portfolio">
+                <Camera size={18} className="mr-2" />
+                View Portfolio
+              </Link>
             </Button>
             <Button variant="hero-outline" size="xl" asChild>
               <Link to="/contact">Book a Shoot</Link>
@@ -81,13 +93,46 @@ const Index = () => {
         >
           <div className="flex flex-col items-center gap-2 text-muted-foreground">
             <span className="text-xs tracking-wider uppercase">Scroll</span>
-            <div className="w-px h-12 bg-gradient-to-b from-muted-foreground to-transparent" />
+            <motion.div 
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-px h-12 bg-gradient-to-b from-accent to-transparent" 
+            />
           </div>
         </motion.div>
       </section>
 
+      {/* Image Slider Section */}
+      <section className="py-16 md:py-24 section-padding">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <p className="text-sm tracking-[0.3em] uppercase text-accent mb-4">
+              Our Work
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl">
+              Featured Gallery
+            </h2>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <ImageSlider />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Services Preview */}
-      <section className="py-24 md:py-32 section-padding">
+      <section className="py-24 md:py-32 section-padding bg-secondary/30">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -100,7 +145,7 @@ const Index = () => {
               What We Do
             </p>
             <h2 className="font-display text-4xl md:text-5xl">
-              Dual Perspectives
+              Our Services
             </h2>
           </motion.div>
 
@@ -111,29 +156,33 @@ const Index = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="group"
+              className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
             >
-              <div className="image-reveal aspect-[4/3] mb-6 overflow-hidden">
+              <div className="image-reveal aspect-[4/3] overflow-hidden">
                 <img
                   src={weddingImage}
                   alt="Professional photography"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="flex items-center gap-3 mb-4">
-                <Camera className="text-accent" size={20} />
-                <h3 className="font-display text-2xl">Photography</h3>
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                    <Camera className="text-accent" size={24} />
+                  </div>
+                  <h3 className="font-display text-2xl">Photography</h3>
+                </div>
+                <p className="text-muted-foreground mb-6">
+                  From intimate portraits to grand events, we craft visual narratives that resonate with emotion and authenticity.
+                </p>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-2 text-sm tracking-wider uppercase text-accent font-medium group-hover:gap-4 transition-all"
+                >
+                  Learn More
+                  <ArrowRight size={14} />
+                </Link>
               </div>
-              <p className="text-muted-foreground mb-4">
-                From intimate portraits to grand events, we craft visual narratives that resonate with emotion and authenticity.
-              </p>
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 text-sm tracking-wider uppercase text-foreground group-hover:text-accent transition-colors"
-              >
-                Learn More
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
             </motion.div>
 
             {/* Drone */}
@@ -142,36 +191,40 @@ const Index = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="group"
+              className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
             >
-              <div className="image-reveal aspect-[4/3] mb-6 overflow-hidden">
+              <div className="image-reveal aspect-[4/3] overflow-hidden">
                 <img
                   src={droneImage}
                   alt="Aerial drone photography"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="flex items-center gap-3 mb-4">
-                <Plane className="text-accent" size={20} />
-                <h3 className="font-display text-2xl">Aerial Imaging</h3>
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                    <Plane className="text-accent" size={24} />
+                  </div>
+                  <h3 className="font-display text-2xl">Aerial Imaging</h3>
+                </div>
+                <p className="text-muted-foreground mb-6">
+                  Certified drone operations delivering breathtaking aerial perspectives for real estate, events, and commercial projects.
+                </p>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-2 text-sm tracking-wider uppercase text-accent font-medium group-hover:gap-4 transition-all"
+                >
+                  Learn More
+                  <ArrowRight size={14} />
+                </Link>
               </div>
-              <p className="text-muted-foreground mb-4">
-                FAA Part 107 certified drone operations delivering breathtaking aerial perspectives for real estate, events, and commercial projects.
-              </p>
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 text-sm tracking-wider uppercase text-foreground group-hover:text-accent transition-colors"
-              >
-                Learn More
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Portfolio Preview */}
-      <section className="py-24 md:py-32 bg-secondary/50">
+      <section className="py-24 md:py-32">
         <div className="section-padding">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -211,7 +264,7 @@ const Index = () => {
                 className="group cursor-pointer"
               >
                 <Link to="/portfolio">
-                  <div className="image-reveal aspect-[4/5] mb-4 overflow-hidden bg-muted">
+                  <div className="image-reveal aspect-[4/5] mb-4 overflow-hidden bg-muted rounded-xl">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -232,7 +285,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 md:py-32 section-padding">
+      <section className="py-24 md:py-32 section-padding bg-gradient-to-br from-accent/10 via-background to-secondary/30">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -240,13 +293,20 @@ const Index = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center"
         >
+          <motion.div
+            animate={{ rotate: [0, 5, -5, 0] }}
+            transition={{ duration: 4, repeat: Infinity }}
+            className="inline-block mb-6"
+          >
+            <Camera size={48} className="text-accent" />
+          </motion.div>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6">
             Let's Create
             <br />
             <span className="italic text-accent">Something Beautiful</span>
           </h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-            Whether it's a wedding, a commercial project, or aerial footage of your property — we're here to bring your vision to life.
+            Whether it's a wedding, a commercial project, or aerial footage of your property — Sadguru Digital is here to bring your vision to life.
           </p>
           <Button variant="hero" size="xl" asChild>
             <Link to="/contact">

@@ -1,7 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Camera } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -36,39 +37,61 @@ export const Navigation = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-background/95 backdrop-blur-md border-b border-border"
+            ? "bg-background/95 backdrop-blur-md border-b border-border shadow-lg"
             : "bg-transparent"
         }`}
       >
-        <nav className="section-padding py-5 flex items-center justify-between">
-          <Link to="/" className="font-display text-xl tracking-wide">
-            AETHER<span className="text-accent">.</span>
+        <nav className="section-padding py-4 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-3 group">
+            <motion.div
+              whileHover={{ rotate: 15 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Camera className="w-8 h-8 text-accent" />
+            </motion.div>
+            <span className="font-display text-xl tracking-wide">
+              Sadguru<span className="text-accent"> Digital</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-10">
+          <ul className="hidden md:flex items-center gap-2">
             {navLinks.map((link) => (
               <li key={link.path}>
                 <Link
                   to={link.path}
-                  className={`nav-link ${
-                    location.pathname === link.path ? "text-foreground" : ""
+                  className={`relative px-4 py-2 rounded-full text-sm tracking-wider uppercase font-medium transition-all duration-300 ${
+                    location.pathname === link.path
+                      ? "bg-accent text-accent-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                   }`}
                 >
                   {link.name}
+                  {location.pathname === link.path && (
+                    <motion.div
+                      layoutId="navbar-indicator"
+                      className="absolute inset-0 bg-accent rounded-full -z-10"
+                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                    />
+                  )}
                 </Link>
               </li>
             ))}
           </ul>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            
+            {/* Mobile Menu Button */}
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 rounded-full bg-secondary/80 text-foreground"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.button>
+          </div>
         </nav>
       </motion.header>
 
@@ -83,7 +106,7 @@ export const Navigation = () => {
             className="fixed inset-0 z-40 bg-background pt-24 md:hidden"
           >
             <nav className="section-padding">
-              <ul className="flex flex-col gap-6">
+              <ul className="flex flex-col gap-4">
                 {navLinks.map((link, index) => (
                   <motion.li
                     key={link.path}
@@ -93,10 +116,10 @@ export const Navigation = () => {
                   >
                     <Link
                       to={link.path}
-                      className={`font-display text-3xl ${
+                      className={`block px-6 py-4 rounded-xl font-display text-2xl transition-all ${
                         location.pathname === link.path
-                          ? "text-foreground"
-                          : "text-muted-foreground"
+                          ? "bg-accent text-accent-foreground"
+                          : "text-muted-foreground hover:bg-secondary hover:text-foreground"
                       }`}
                     >
                       {link.name}
