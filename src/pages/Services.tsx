@@ -18,7 +18,7 @@ const droneServices = [
 ];
 
 const certifications = [
-  "FAA Part 107 Remote Pilot Certificate",
+  "Certified Drone Pilot",
   "Fully insured operations",
   "10+ years combined experience",
   "Professional-grade equipment",

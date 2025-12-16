@@ -25,16 +25,16 @@ const About = () => {
               Our Story
             </p>
             <h1 className="font-display text-5xl md:text-6xl mb-6">
-              About Aether
+              About <span className="text-accent">Sadguru Digital</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-6">
               We believe every moment holds a story worth preserving — whether captured from the ground or from above.
             </p>
             <p className="text-muted-foreground mb-8">
-              Aether Studio was founded with a singular vision: to blend traditional photographic artistry with cutting-edge aerial technology. What started as a passion for visual storytelling has evolved into a full-service creative studio serving clients across the country.
+              Sadguru Digital was founded with a singular vision: to blend traditional photographic artistry with cutting-edge aerial technology. Based in Nandurbar, we've grown from a passion for visual storytelling into a full-service creative studio serving clients across Maharashtra.
             </p>
             <p className="text-muted-foreground">
-              Our name, Aether, represents the element that ancients believed filled the universe above — a fitting symbol for our commitment to capturing perspectives that transcend the ordinary.
+              Our commitment is to capture perspectives that transcend the ordinary, preserving your precious moments with professionalism and artistic excellence.
             </p>
           </motion.div>
 
@@ -99,10 +99,10 @@ const About = () => {
                 Photography is more than pressing a button — it's about understanding light, emotion, and timing. Our approach combines technical mastery with artistic intuition, ensuring every shot tells a compelling story.
               </p>
               <p>
-                When we take to the skies, we bring the same dedication to our aerial work. As FAA Part 107 certified operators, we understand that great drone footage isn't just about altitude — it's about finding the angle that reveals something new, something breathtaking.
+                When we take to the skies, we bring the same dedication to our aerial work. As certified drone operators, we understand that great drone footage isn't just about altitude — it's about finding the angle that reveals something new, something breathtaking.
               </p>
               <p>
-                Safety is paramount in everything we do. Every aerial operation is conducted with rigorous pre-flight checks, comprehensive insurance, and strict adherence to all FAA regulations. Our clients can trust that their project is in experienced, professional hands.
+                Safety is paramount in everything we do. Every aerial operation is conducted with rigorous pre-flight checks, comprehensive insurance, and strict adherence to all regulations. Our clients can trust that their project is in experienced, professional hands.
               </p>
             </div>
           </motion.div>

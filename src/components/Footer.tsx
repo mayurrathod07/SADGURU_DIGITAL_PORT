@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail, Phone } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin, Camera } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const Footer = () => {
   return (
@@ -8,11 +9,14 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <h3 className="font-display text-2xl mb-4">
-              AETHER<span className="text-accent">.</span>
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <Camera className="w-8 h-8 text-accent" />
+              <h3 className="font-display text-2xl">
+                Sadguru<span className="text-accent"> Digital</span>
+              </h3>
+            </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-xs">
-              Capturing moments from ground to sky. Professional photography and certified drone services.
+              Capturing moments from ground to sky. Professional photography and certified drone services in Nandurbar.
             </p>
           </div>
 
@@ -26,7 +30,7 @@ export const Footer = () => {
                 <li key={link}>
                   <Link
                     to={`/${link.toLowerCase()}`}
-                    className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
+                    className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                   >
                     {link}
                   </Link>
@@ -43,32 +47,36 @@ export const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:hello@aether.studio"
-                  className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
+                  href="mailto:sadgurudigital@gmail.com"
+                  className="flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
                   <Mail size={16} />
-                  hello@aether.studio
+                  sadgurudigital@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+1234567890"
-                  className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
+                  href="tel:+919876543210"
+                  className="flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
                   <Phone size={16} />
-                  +1 (234) 567-890
+                  +91 98765 43210
                 </a>
               </li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/sadguru_digital_nandurbar/?hl=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
+                  className="flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
                   <Instagram size={16} />
-                  @aether.studio
+                  @sadguru_digital_nandurbar
                 </a>
+              </li>
+              <li className="flex items-start gap-2 text-primary-foreground/70 text-sm">
+                <MapPin size={16} className="flex-shrink-0 mt-0.5" />
+                <span>Shop No. 108, Sairachana Plaza, Bus Stand Complex, Near Sadguru Computer & Minai Cyber Cafe, Nandurbar</span>
               </li>
             </ul>
           </div>
@@ -76,11 +84,18 @@ export const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/50 text-xs">
-            © {new Date().getFullYear()} Aether Studio. All rights reserved.
+            © {new Date().getFullYear()} Sadguru Digital. All rights reserved.
           </p>
-          <p className="text-primary-foreground/50 text-xs">
-            FAA Part 107 Certified Drone Operations
-          </p>
+          <motion.a
+            href="https://www.instagram.com/sadguru_digital_nandurbar/?hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            className="flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors"
+          >
+            <Instagram size={20} />
+            <span className="text-xs">Follow us on Instagram</span>
+          </motion.a>
         </div>
       </div>
     </footer>
