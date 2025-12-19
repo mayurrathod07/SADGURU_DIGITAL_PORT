@@ -4,6 +4,7 @@ import { ArrowRight, Camera, Plane, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageSlider } from "@/components/ImageSlider";
 import { CameraAnimation } from "@/components/CameraAnimation";
+import { OurWorkGallery } from "@/components/OurWorkGallery";
 import heroImage from "@/assets/hero-landscape.jpg";
 import droneImage from "@/assets/drone-coastal.jpg";
 import weddingImage from "@/assets/wedding-portrait.jpg";
@@ -29,61 +30,73 @@ const Index = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center">
+      <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0 z-0">
           <img
             src={heroImage}
             alt="Dramatic landscape photography"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/40" />
         </div>
 
-        <motion.div
-          variants={stagger}
-          initial="initial"
-          animate="animate"
-          className="relative z-10 text-center section-padding max-w-5xl mx-auto pt-24"
-        >
-          <motion.div variants={fadeUp} className="flex justify-center mb-8">
-            <CameraAnimation />
-          </motion.div>
-          
-          <motion.div
-            variants={fadeUp}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 backdrop-blur-sm text-accent mb-6"
-          >
-            <Sparkles size={16} />
-            <span className="text-sm tracking-wider uppercase">Sadguru Digital Photography</span>
-          </motion.div>
-          
-          <motion.h1
-            variants={fadeUp}
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-medium leading-tight mb-6"
-          >
-            Capturing Your
-            <br />
-            <span className="italic text-accent">Precious Moments</span>
-          </motion.h1>
-          <motion.p
-            variants={fadeUp}
-            className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10"
-          >
-            Professional photography and certified drone services in Nandurbar. 
-            Let us tell your story through stunning visuals.
-          </motion.p>
-          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="xl" asChild>
-              <Link to="/portfolio">
-                <Camera size={18} className="mr-2" />
-                View Portfolio
-              </Link>
-            </Button>
-            <Button variant="hero-outline" size="xl" asChild>
-              <Link to="/contact">Book a Shoot</Link>
-            </Button>
-          </motion.div>
-        </motion.div>
+        <div className="relative z-10 section-padding w-full">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center pt-24">
+            {/* Left content */}
+            <motion.div
+              variants={stagger}
+              initial="initial"
+              animate="animate"
+            >
+              <motion.div
+                variants={fadeUp}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/15 backdrop-blur-sm text-accent mb-6 border border-accent/20"
+              >
+                <Sparkles size={16} />
+                <span className="text-sm tracking-wider uppercase font-medium">Sadguru Digital</span>
+              </motion.div>
+              
+              <motion.h1
+                variants={fadeUp}
+                className="font-display text-4xl md:text-6xl lg:text-7xl font-medium leading-tight mb-6"
+              >
+                Capturing Stories
+                <br />
+                <span className="italic text-accent">From Every Angle</span>
+              </motion.h1>
+              
+              <motion.p
+                variants={fadeUp}
+                className="text-lg text-muted-foreground max-w-lg mb-8"
+              >
+                Professional photography and certified drone services in Nandurbar. 
+                We transform moments into timeless visual narratives.
+              </motion.p>
+              
+              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
+                <Button variant="hero" size="xl" asChild>
+                  <Link to="/portfolio">
+                    <Camera size={18} className="mr-2" />
+                    View Portfolio
+                  </Link>
+                </Button>
+                <Button variant="hero-outline" size="xl" asChild>
+                  <Link to="/contact">Book a Shoot</Link>
+                </Button>
+              </motion.div>
+            </motion.div>
+
+            {/* Right - Camera Animation */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="hidden lg:flex justify-center items-center"
+            >
+              <CameraAnimation />
+            </motion.div>
+          </div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -113,10 +126,10 @@ const Index = () => {
             className="text-center mb-12"
           >
             <p className="text-sm tracking-[0.3em] uppercase text-accent mb-4">
-              Our Work
+              Showcase
             </p>
             <h2 className="font-display text-4xl md:text-5xl">
-              Featured Gallery
+              Visual Stories
             </h2>
           </motion.div>
           
@@ -131,8 +144,11 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Our Work Gallery Section */}
+      <OurWorkGallery />
+
       {/* Services Preview */}
-      <section className="py-24 md:py-32 section-padding bg-secondary/30">
+      <section className="py-24 md:py-32 section-padding">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -156,7 +172,7 @@ const Index = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
+              className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50"
             >
               <div className="image-reveal aspect-[4/3] overflow-hidden">
                 <img
@@ -191,7 +207,7 @@ const Index = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
+              className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50"
             >
               <div className="image-reveal aspect-[4/3] overflow-hidden">
                 <img
@@ -223,69 +239,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Portfolio Preview */}
-      <section className="py-24 md:py-32">
-        <div className="section-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 max-w-7xl mx-auto"
-          >
-            <div>
-              <p className="text-sm tracking-[0.3em] uppercase text-accent mb-4">
-                Selected Works
-              </p>
-              <h2 className="font-display text-4xl md:text-5xl">
-                Recent Projects
-              </h2>
-            </div>
-            <Button variant="hero-outline" size="lg" asChild>
-              <Link to="/portfolio">
-                View All
-                <ArrowRight size={16} />
-              </Link>
-            </Button>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {[
-              { image: realestateImage, title: "Coastal Estate", category: "Aerial" },
-              { image: eventImage, title: "Gala Evening", category: "Events" },
-              { image: productImage, title: "Timepiece", category: "Commercial" },
-            ].map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="group cursor-pointer"
-              >
-                <Link to="/portfolio">
-                  <div className="image-reveal aspect-[4/5] mb-4 overflow-hidden bg-muted rounded-xl">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-xs tracking-wider uppercase text-accent mb-1">
-                    {project.category}
-                  </p>
-                  <h3 className="font-display text-xl group-hover:text-accent transition-colors">
-                    {project.title}
-                  </h3>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-24 md:py-32 section-padding bg-gradient-to-br from-accent/10 via-background to-secondary/30">
+      <section className="py-24 md:py-32 section-padding bg-gradient-to-br from-accent/5 via-background to-secondary/20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -83,9 +83,14 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-primary-foreground/50 text-xs">
-            © {new Date().getFullYear()} Sadguru Digital. All rights reserved.
-          </p>
+          <div className="text-center md:text-left">
+            <p className="text-primary-foreground/50 text-xs">
+              © {new Date().getFullYear()} Sadguru Digital. All Rights Reserved.
+            </p>
+            <p className="text-primary-foreground/40 text-xs mt-1">
+              Created by <span className="text-accent">Mayur Rathod</span>
+            </p>
+          </div>
           <motion.a
             href="https://www.instagram.com/sadguru_digital_nandurbar/?hl=en"
             target="_blank"
