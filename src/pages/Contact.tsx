@@ -10,39 +10,49 @@ const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
+    try {
+      const response = await fetch("https://formspree.io/f/mqarrqeq", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
-    // Reset form after delay
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-    }, 3000);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+      if (response.ok) {
+        setIsSubmitted(true);
+        toast({
+          title: "Message Sent!",
+          description: "We'll get back to you within 24 hours.",
+        });
+        form.reset();
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 3000);
+      } else {
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -104,7 +114,7 @@ const Contact = () => {
             
             <div className="space-y-6 mb-12">
               <motion.a
-                href="mailto:sadgurudigital@gmail.com"
+                href="mailto:mayurrathod0707@gmail.com"
                 className="flex items-start gap-4 group p-4 rounded-xl bg-card hover:bg-secondary/50 transition-all"
                 whileHover={{ x: 5 }}
               >
@@ -114,13 +124,13 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Email</p>
                   <p className="font-display text-lg group-hover:text-accent transition-colors">
-                    sadgurudigital@gmail.com
+                    mayurrathod0707@gmail.com
                   </p>
                 </div>
               </motion.a>
 
               <motion.a
-                href="tel:+919876543210"
+                href="tel:+919021128321"
                 className="flex items-start gap-4 group p-4 rounded-xl bg-card hover:bg-secondary/50 transition-all"
                 whileHover={{ x: 5 }}
               >
@@ -130,7 +140,10 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Phone</p>
                   <p className="font-display text-lg group-hover:text-accent transition-colors">
-                    +91 98765 43210
+                    +91 90211 28321
+                  </p>
+                  <p className="font-display text-lg group-hover:text-accent transition-colors">
+                    +91 80805 44106
                   </p>
                 </div>
               </motion.a>
@@ -224,7 +237,12 @@ const Contact = () => {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form
+                  action="https://formspree.io/f/mqarrqeq"
+                  method="POST"
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                >
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -233,8 +251,6 @@ const Contact = () => {
                       <Input
                         id="name"
                         name="name"
-                        value={formData.name}
-                        onChange={handleChange}
                         required
                         className="bg-background border-border rounded-xl h-12 focus:ring-2 focus:ring-accent"
                         placeholder="Your name"
@@ -248,8 +264,6 @@ const Contact = () => {
                         id="email"
                         name="email"
                         type="email"
-                        value={formData.email}
-                        onChange={handleChange}
                         required
                         className="bg-background border-border rounded-xl h-12 focus:ring-2 focus:ring-accent"
                         placeholder="your@email.com"
@@ -266,8 +280,6 @@ const Contact = () => {
                         id="phone"
                         name="phone"
                         type="tel"
-                        value={formData.phone}
-                        onChange={handleChange}
                         className="bg-background border-border rounded-xl h-12 focus:ring-2 focus:ring-accent"
                         placeholder="+91 12345 67890"
                       />
@@ -279,8 +291,6 @@ const Contact = () => {
                       <select
                         id="service"
                         name="service"
-                        value={formData.service}
-                        onChange={handleChange}
                         className="w-full h-12 px-4 bg-background border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-accent"
                       >
                         <option value="">Select a service</option>
@@ -301,8 +311,6 @@ const Contact = () => {
                     <Textarea
                       id="message"
                       name="message"
-                      value={formData.message}
-                      onChange={handleChange}
                       required
                       rows={5}
                       placeholder="Tell us about your project..."

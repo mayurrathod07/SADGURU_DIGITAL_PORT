@@ -15,8 +15,11 @@ export const Footer = () => {
                 Sadguru<span className="text-accent"> Digital</span>
               </h3>
             </div>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-xs">
-              Capturing moments from ground to sky. Professional photography and certified drone services in Nandurbar.
+            <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-xs mb-2">
+              Professional Photography & Drone Shoots
+            </p>
+            <p className="text-primary-foreground/60 text-sm italic">
+              "Capturing stories from every angle."
             </p>
           </div>
 
@@ -47,20 +50,29 @@ export const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:sadgurudigital@gmail.com"
+                  href="mailto:mayurrathod0707@gmail.com"
                   className="flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
                   <Mail size={16} />
-                  sadgurudigital@gmail.com
+                  mayurrathod0707@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919021128321"
                   className="flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors text-sm"
                 >
                   <Phone size={16} />
-                  +91 98765 43210
+                  +91 90211 28321
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+918080544106"
+                  className="flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors text-sm"
+                >
+                  <Phone size={16} />
+                  +91 80805 44106
                 </a>
               </li>
               <li>

@@ -31,10 +31,10 @@ const About = () => {
               We believe every moment holds a story worth preserving — whether captured from the ground or from above.
             </p>
             <p className="text-muted-foreground mb-8">
-              Sadguru Digital was founded with a singular vision: to blend traditional photographic artistry with cutting-edge aerial technology. Based in Nandurbar, we've grown from a passion for visual storytelling into a full-service creative studio serving clients across Maharashtra.
+              Founded by <span className="text-accent font-semibold">Arun Chavan</span>, Sadguru Digital was born from a deep passion for visual storytelling and a vision to bring world-class photography and drone services to Nandurbar. With years of experience and an eye for capturing the perfect moment, Arun has built a team that shares his commitment to excellence.
             </p>
             <p className="text-muted-foreground">
-              Our commitment is to capture perspectives that transcend the ordinary, preserving your precious moments with professionalism and artistic excellence.
+              Based in the heart of Nandurbar, we've grown from a small studio into a full-service creative powerhouse, serving clients across Maharashtra with professional photography, videography, and cutting-edge aerial drone services.
             </p>
           </motion.div>
 
@@ -78,8 +78,39 @@ const About = () => {
         </div>
       </section>
 
-      {/* Philosophy */}
+      {/* Meet the Founder */}
       <section className="section-padding py-24">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-sm tracking-[0.3em] uppercase text-accent mb-4">
+              Meet Our Founder
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl mb-8">
+              Arun Chavan
+            </h2>
+            
+            <div className="space-y-6 text-muted-foreground">
+              <p>
+                Arun Chavan's journey into photography began with a simple belief: every moment deserves to be captured beautifully. What started as a hobby quickly transformed into a lifelong passion, and eventually, into Sadguru Digital.
+              </p>
+              <p>
+                With expertise spanning wedding photography, event coverage, portrait sessions, and professional drone operations, Arun brings a unique blend of technical skill and artistic vision to every project. His approach combines traditional photographic techniques with modern technology, ensuring that each shot tells a compelling story.
+              </p>
+              <p>
+                Under Arun's leadership, Sadguru Digital has become synonymous with quality, professionalism, and creativity in Nandurbar and beyond. His dedication to client satisfaction and his eye for capturing authentic emotions have earned him the trust of hundreds of families and businesses.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Philosophy */}
+      <section className="section-padding py-24 bg-secondary/50">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -110,7 +141,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="section-padding py-24 bg-secondary/50">
+      <section className="section-padding py-24">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -148,7 +179,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="text-center p-8 bg-background"
+                className="text-center p-8 bg-secondary/50 rounded-xl"
               >
                 <h3 className="font-display text-xl mb-4">{value.title}</h3>
                 <p className="text-sm text-muted-foreground">{value.description}</p>
@@ -159,7 +190,7 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding py-24">
+      <section className="section-padding py-24 bg-secondary/50">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
