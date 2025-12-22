@@ -114,7 +114,7 @@ const Contact = () => {
             
             <div className="space-y-6 mb-12">
               <motion.a
-                href="mailto:mayurrathod0707@gmail.com"
+                href="mailto:Sadgurudigitalnandurbar01@gmail.com"
                 className="flex items-start gap-4 group p-4 rounded-xl bg-card hover:bg-secondary/50 transition-all"
                 whileHover={{ x: 5 }}
               >
@@ -124,7 +124,7 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Email</p>
                   <p className="font-display text-lg group-hover:text-accent transition-colors">
-                    mayurrathod0707@gmail.com
+                    Sadgurudigitalnandurbar01@gmail.com
                   </p>
                 </div>
               </motion.a>

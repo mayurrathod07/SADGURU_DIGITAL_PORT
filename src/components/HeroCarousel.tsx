@@ -10,12 +10,6 @@ import productImage from "@/assets/product-photo.jpg";
 
 const slides = [
   { 
-    image: heroImage, 
-    title: "Capturing Stories", 
-    subtitle: "From Every Angle",
-    description: "Professional photography and certified drone services"
-  },
-  { 
     image: weddingImage, 
     title: "Wedding Moments", 
     subtitle: "Forever Preserved",
@@ -28,16 +22,22 @@ const slides = [
     description: "Stunning drone photography and videography"
   },
   { 
-    image: realestateImage, 
-    title: "Real Estate", 
-    subtitle: "Property Showcase",
-    description: "Professional property photography"
+    image: heroImage, 
+    title: "Capturing Stories", 
+    subtitle: "From Every Angle",
+    description: "Professional photography and certified drone services"
   },
   { 
     image: eventImage, 
     title: "Event Coverage", 
     subtitle: "Every Moment Matters",
     description: "Complete event documentation"
+  },
+  { 
+    image: realestateImage, 
+    title: "Real Estate", 
+    subtitle: "Property Showcase",
+    description: "Professional property photography"
   },
   { 
     image: productImage, 
