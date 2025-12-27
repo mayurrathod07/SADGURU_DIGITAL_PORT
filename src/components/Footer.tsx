@@ -1,24 +1,24 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail, Phone, MapPin, Camera } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin, Camera, Code, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="section-padding py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-12 sm:py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <Camera className="w-8 h-8 text-accent" />
-              <h3 className="font-display text-2xl">
+            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <Camera className="w-6 h-6 sm:w-8 sm:h-8 text-accent" />
+              <h3 className="font-display text-xl sm:text-2xl">
                 Sadguru<span className="text-accent"> Digital</span>
               </h3>
             </div>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-xs mb-2">
+            <p className="text-primary-foreground/70 text-xs sm:text-sm leading-relaxed max-w-xs mb-2">
               Professional Photography & Drone Shoots
             </p>
-            <p className="text-primary-foreground/60 text-sm italic">
+            <p className="text-primary-foreground/60 text-xs sm:text-sm italic">
               "Capturing stories from every angle."
             </p>
           </div>
@@ -94,25 +94,64 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-center md:text-left">
-            <p className="text-primary-foreground/50 text-xs">
-              © {new Date().getFullYear()} Sadguru Digital. All Rights Reserved.
-            </p>
-            <p className="text-primary-foreground/40 text-xs mt-1">
-              Created by <span className="text-accent">Mayur Rathod</span>
-            </p>
+        <div className="border-t border-primary-foreground/10 mt-8 sm:mt-12 pt-6 sm:pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+            <div className="text-center md:text-left">
+              <p className="text-primary-foreground/50 text-xs">
+                © {new Date().getFullYear()} Sadguru Digital. All Rights Reserved.
+              </p>
+              <p className="text-primary-foreground/40 text-xs mt-1">
+                Created by <span className="text-accent">Mayur Rathod</span>
+              </p>
+            </div>
+            <motion.a
+              href="https://www.instagram.com/sadguru_digital_nandurbar/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              className="flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors text-xs sm:text-sm"
+            >
+              <Instagram size={18} className="sm:w-5 sm:h-5" />
+              <span className="text-xs">Follow us on Instagram</span>
+            </motion.a>
           </div>
-          <motion.a
-            href="https://www.instagram.com/sadguru_digital_nandurbar/?hl=en"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.1 }}
-            className="flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors"
-          >
-            <Instagram size={20} />
-            <span className="text-xs">Follow us on Instagram</span>
-          </motion.a>
+
+          {/* Developer Advertisement */}
+          <div className="border-t border-primary-foreground/10 pt-4 sm:pt-6">
+            <div className="bg-primary-foreground/5 rounded-lg p-3 sm:p-4 max-w-2xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+                <div className="flex items-center gap-2">
+                  <Code className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
+                  <p className="text-primary-foreground/80 text-xs sm:text-sm font-medium">
+                    Need a website? Contact the developer
+                  </p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <motion.a
+                    href="https://www.instagram.com/mayur.ratho.d/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    className="flex items-center gap-1.5 text-primary-foreground/70 hover:text-accent transition-colors text-xs"
+                  >
+                    <Instagram size={14} className="sm:w-4 sm:h-4" />
+                    <span>Instagram</span>
+                    <ExternalLink size={12} className="sm:w-3 sm:h-3" />
+                  </motion.a>
+                  <motion.a
+                    href="https://mayurathod.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    className="flex items-center gap-1.5 text-primary-foreground/70 hover:text-accent transition-colors text-xs"
+                  >
+                    <span>Portfolio</span>
+                    <ExternalLink size={12} className="sm:w-3 sm:h-3" />
+                  </motion.a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

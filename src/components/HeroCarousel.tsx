@@ -92,7 +92,7 @@ export const HeroCarousel = () => {
       </AnimatePresence>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 flex items-center section-padding">
+      <div className="absolute inset-0 flex items-center px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
         <div className="max-w-7xl mx-auto w-full">
           <AnimatePresence mode="wait">
             <motion.div
@@ -107,17 +107,17 @@ export const HeroCarousel = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                className="text-sm tracking-[0.3em] uppercase text-accent mb-4"
+                className="text-xs sm:text-sm tracking-[0.3em] uppercase text-accent mb-3 sm:mb-4"
               >
                 Sadguru Digital
               </motion.p>
-              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-medium leading-tight mb-2">
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-tight mb-2">
                 {slides[current].title}
               </h1>
-              <h2 className="font-display text-3xl md:text-5xl lg:text-6xl italic text-accent mb-6">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl italic text-accent mb-4 sm:mb-6">
                 {slides[current].subtitle}
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg mb-6 sm:mb-8">
                 {slides[current].description}
               </p>
             </motion.div>
@@ -125,32 +125,32 @@ export const HeroCarousel = () => {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Hidden on mobile */}
       <button
         onClick={prev}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-background/20 dark:bg-background/40 backdrop-blur-md flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300 border border-border/20"
+        className="hidden md:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-background/20 dark:bg-background/40 backdrop-blur-md items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300 border border-border/20"
         aria-label="Previous slide"
       >
         <ChevronLeft size={24} />
       </button>
       <button
         onClick={next}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-background/20 dark:bg-background/40 backdrop-blur-md flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300 border border-border/20"
+        className="hidden md:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-background/20 dark:bg-background/40 backdrop-blur-md items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300 border border-border/20"
         aria-label="Next slide"
       >
         <ChevronRight size={24} />
       </button>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex gap-2 sm:gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goTo(index)}
-            className={`h-1.5 rounded-full transition-all duration-500 ${
+            className={`h-1 sm:h-1.5 rounded-full transition-all duration-500 ${
               index === current 
-                ? "w-10 bg-accent" 
-                : "w-3 bg-foreground/30 hover:bg-foreground/50"
+                ? "w-8 sm:w-10 bg-accent" 
+                : "w-2 sm:w-3 bg-foreground/30 hover:bg-foreground/50"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

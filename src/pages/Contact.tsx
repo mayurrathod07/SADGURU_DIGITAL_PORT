@@ -56,7 +56,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-16 sm:pt-20 md:pt-24">
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <motion.div
@@ -76,54 +76,54 @@ const Contact = () => {
       </div>
 
       {/* Header */}
-      <section className="section-padding py-16 md:py-24">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl"
+          className="max-w-4xl mx-auto"
         >
           <motion.div 
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring" }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 backdrop-blur-sm text-accent mb-6"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-accent/20 backdrop-blur-sm text-accent mb-4 sm:mb-6"
           >
-            <Camera size={16} />
-            <span className="text-sm tracking-wider uppercase">Get in Touch</span>
+            <Camera size={14} className="sm:w-4 sm:h-4" />
+            <span className="text-xs sm:text-sm tracking-wider uppercase">Get in Touch</span>
           </motion.div>
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 leading-tight">
             Contact <span className="text-accent">Us</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-xl">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl">
             Ready to capture your special moments? We'd love to hear from you.
           </p>
         </motion.div>
       </section>
 
       {/* Contact Content */}
-      <section className="section-padding pb-24">
-        <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
+      <section className="pb-12 sm:pb-16 md:pb-24 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-7xl mx-auto">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="font-display text-3xl mb-8">Let's Connect</h2>
+            <h2 className="font-display text-2xl sm:text-3xl mb-6 sm:mb-8">Let's Connect</h2>
             
-            <div className="space-y-6 mb-12">
+            <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
               <motion.a
                 href="mailto:Sadgurudigitalnandurbar01@gmail.com"
-                className="flex items-start gap-4 group p-4 rounded-xl bg-card hover:bg-secondary/50 transition-all"
+                className="flex items-start gap-3 sm:gap-4 group p-3 sm:p-4 rounded-xl bg-card hover:bg-secondary/50 transition-all"
                 whileHover={{ x: 5 }}
               >
-                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all">
-                  <Mail size={24} className="text-accent group-hover:text-accent-foreground transition-colors" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all">
+                  <Mail size={20} className="sm:w-6 sm:h-6 text-accent group-hover:text-accent-foreground transition-colors" />
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">Email</p>
-                  <p className="font-display text-lg group-hover:text-accent transition-colors">
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-1">Email</p>
+                  <p className="font-display text-sm sm:text-base md:text-lg group-hover:text-accent transition-colors break-words">
                     Sadgurudigitalnandurbar01@gmail.com
                   </p>
                 </div>
@@ -131,18 +131,18 @@ const Contact = () => {
 
               <motion.a
                 href="tel:+919021128321"
-                className="flex items-start gap-4 group p-4 rounded-xl bg-card hover:bg-secondary/50 transition-all"
+                className="flex items-start gap-3 sm:gap-4 group p-3 sm:p-4 rounded-xl bg-card hover:bg-secondary/50 transition-all"
                 whileHover={{ x: 5 }}
               >
-                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all">
-                  <Phone size={24} className="text-accent group-hover:text-accent-foreground transition-colors" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all">
+                  <Phone size={20} className="sm:w-6 sm:h-6 text-accent group-hover:text-accent-foreground transition-colors" />
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">Phone</p>
-                  <p className="font-display text-lg group-hover:text-accent transition-colors">
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-1">Phone</p>
+                  <p className="font-display text-sm sm:text-base md:text-lg group-hover:text-accent transition-colors">
                     +91 90211 28321
                   </p>
-                  <p className="font-display text-lg group-hover:text-accent transition-colors">
+                  <p className="font-display text-sm sm:text-base md:text-lg group-hover:text-accent transition-colors">
                     +91 80805 44106
                   </p>
                 </div>
@@ -152,33 +152,33 @@ const Contact = () => {
                 href="https://www.instagram.com/sadguru_digital_nandurbar/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-4 group p-4 rounded-xl bg-card hover:bg-secondary/50 transition-all"
+                className="flex items-start gap-3 sm:gap-4 group p-3 sm:p-4 rounded-xl bg-card hover:bg-secondary/50 transition-all"
                 whileHover={{ x: 5 }}
               >
-                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all">
-                  <Instagram size={24} className="text-accent group-hover:text-accent-foreground transition-colors" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all">
+                  <Instagram size={20} className="sm:w-6 sm:h-6 text-accent group-hover:text-accent-foreground transition-colors" />
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">Instagram</p>
-                  <p className="font-display text-lg group-hover:text-accent transition-colors">
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-1">Instagram</p>
+                  <p className="font-display text-sm sm:text-base md:text-lg group-hover:text-accent transition-colors break-words">
                     @sadguru_digital_nandurbar
                   </p>
                 </div>
               </motion.a>
 
               <motion.div
-                className="flex items-start gap-4 p-4 rounded-xl bg-card"
+                className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-card"
                 whileHover={{ x: 5 }}
               >
-                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin size={24} className="text-accent" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin size={20} className="sm:w-6 sm:h-6 text-accent" />
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">Studio Location</p>
-                  <p className="font-display text-lg">
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-1">Studio Location</p>
+                  <p className="font-display text-sm sm:text-base md:text-lg">
                     Sadguru Digital
                   </p>
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-1 break-words">
                     Shop No. 108, Sairachana Plaza, Bus Stand Complex, Near Sadguru Computer & Minai Cyber Cafe, Nandurbar
                   </p>
                 </div>
@@ -189,18 +189,18 @@ const Contact = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="border border-border rounded-xl p-6 bg-gradient-to-br from-accent/5 to-transparent"
+              className="border border-border rounded-xl p-4 sm:p-6 bg-gradient-to-br from-accent/5 to-transparent"
             >
-              <h3 className="font-display text-lg mb-3 flex items-center gap-2">
+              <h3 className="font-display text-base sm:text-lg mb-2 sm:mb-3 flex items-center gap-2">
                 <motion.div
                   animate={{ rotate: [0, 15, -15, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
-                  <Camera size={20} className="text-accent" />
+                  <Camera size={18} className="sm:w-5 sm:h-5 text-accent" />
                 </motion.div>
                 Response Time
               </h3>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-muted-foreground text-xs sm:text-sm">
                 We typically respond within 24 hours. For urgent inquiries, please call us directly.
               </p>
             </motion.div>
@@ -212,9 +212,9 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="bg-card border border-border rounded-2xl p-8 md:p-10 shadow-xl">
-              <h2 className="font-display text-2xl mb-6 flex items-center gap-3">
-                <Send size={24} className="text-accent" />
+            <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-xl">
+              <h2 className="font-display text-xl sm:text-2xl mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                <Send size={20} className="sm:w-6 sm:h-6 text-accent" />
                 Send a Message
               </h2>
 
@@ -222,17 +222,17 @@ const Contact = () => {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center justify-center py-16 text-center"
+                  className="flex flex-col items-center justify-center py-12 sm:py-16 text-center"
                 >
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 200 }}
                   >
-                    <CheckCircle size={64} className="text-accent mb-4" />
+                    <CheckCircle size={48} className="sm:w-16 sm:h-16 text-accent mb-3 sm:mb-4" />
                   </motion.div>
-                  <h3 className="font-display text-2xl mb-2">Thank You!</h3>
-                  <p className="text-muted-foreground">
+                  <h3 className="font-display text-xl sm:text-2xl mb-2">Thank You!</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground px-4">
                     We've received your message and will be in touch soon.
                   </p>
                 </motion.div>
@@ -241,23 +241,23 @@ const Contact = () => {
                   action="https://formspree.io/f/mqarrqeq"
                   method="POST"
                   onSubmit={handleSubmit}
-                  className="space-y-6"
+                  className="space-y-4 sm:space-y-6"
                 >
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium mb-2">
+                      <label htmlFor="name" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                         Name *
                       </label>
                       <Input
                         id="name"
                         name="name"
                         required
-                        className="bg-background border-border rounded-xl h-12 focus:ring-2 focus:ring-accent"
+                        className="bg-background border-border rounded-xl h-11 sm:h-12 text-sm sm:text-base focus:ring-2 focus:ring-accent"
                         placeholder="Your name"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-2">
+                      <label htmlFor="email" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                         Email *
                       </label>
                       <Input
@@ -265,7 +265,7 @@ const Contact = () => {
                         name="email"
                         type="email"
                         required
-                        className="bg-background border-border rounded-xl h-12 focus:ring-2 focus:ring-accent"
+                        className="bg-background border-border rounded-xl h-11 sm:h-12 text-sm sm:text-base focus:ring-2 focus:ring-accent"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -273,25 +273,25 @@ const Contact = () => {
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                      <label htmlFor="phone" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                         Phone
                       </label>
                       <Input
                         id="phone"
                         name="phone"
                         type="tel"
-                        className="bg-background border-border rounded-xl h-12 focus:ring-2 focus:ring-accent"
+                        className="bg-background border-border rounded-xl h-11 sm:h-12 text-sm sm:text-base focus:ring-2 focus:ring-accent"
                         placeholder="+91 12345 67890"
                       />
                     </div>
                     <div>
-                      <label htmlFor="service" className="block text-sm font-medium mb-2">
+                      <label htmlFor="service" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                         Service Interest
                       </label>
                       <select
                         id="service"
                         name="service"
-                        className="w-full h-12 px-4 bg-background border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-accent"
+                        className="w-full h-11 sm:h-12 px-3 sm:px-4 bg-background border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-accent"
                       >
                         <option value="">Select a service</option>
                         <option value="wedding">Wedding Photography</option>
@@ -305,7 +305,7 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    <label htmlFor="message" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                       Message *
                     </label>
                     <Textarea
@@ -314,7 +314,7 @@ const Contact = () => {
                       required
                       rows={5}
                       placeholder="Tell us about your project..."
-                      className="bg-background border-border rounded-xl resize-none focus:ring-2 focus:ring-accent"
+                      className="bg-background border-border rounded-xl resize-none text-sm sm:text-base focus:ring-2 focus:ring-accent"
                     />
                   </div>
 
@@ -322,7 +322,7 @@ const Contact = () => {
                     type="submit"
                     variant="hero"
                     size="lg"
-                    className="w-full h-14 text-base"
+                    className="w-full h-12 sm:h-14 text-sm sm:text-base"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
@@ -330,12 +330,12 @@ const Contact = () => {
                         animate={{ rotate: 360 }}
                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                       >
-                        <Aperture size={20} />
+                        <Aperture size={18} className="sm:w-5 sm:h-5" />
                       </motion.div>
                     ) : (
                       <>
                         Send Message
-                        <Send size={18} />
+                        <Send size={16} className="sm:w-[18px] sm:h-[18px]" />
                       </>
                     )}
                   </Button>

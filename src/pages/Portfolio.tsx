@@ -27,40 +27,40 @@ const Portfolio = () => {
     : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-16 sm:pt-20 md:pt-24">
       {/* Header */}
-      <section className="section-padding py-16 md:py-24">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl"
+          className="max-w-4xl mx-auto"
         >
-          <p className="text-sm tracking-[0.3em] uppercase text-accent mb-4">
+          <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-accent mb-3 sm:mb-4">
             Our Work
           </p>
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6">
             Portfolio
           </h1>
-          <p className="text-xl text-muted-foreground max-w-xl">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl">
             A curated collection of our finest work across photography and aerial imaging.
           </p>
         </motion.div>
       </section>
 
       {/* Filter */}
-      <section className="section-padding pb-8">
+      <section className="pb-6 sm:pb-8 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap gap-4"
+          className="flex flex-wrap gap-2 sm:gap-3 md:gap-4"
         >
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`text-sm tracking-wider uppercase px-4 py-2 transition-all duration-300 ${
+              className={`text-xs sm:text-sm tracking-wider uppercase px-3 sm:px-4 py-1.5 sm:py-2 transition-all duration-300 ${
                 activeCategory === category
                   ? "text-foreground border-b border-accent"
                   : "text-muted-foreground hover:text-foreground"
@@ -73,8 +73,8 @@ const Portfolio = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="section-padding pb-24">
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="pb-12 sm:pb-16 md:pb-24 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <motion.div
@@ -97,7 +97,7 @@ const Portfolio = () => {
                 <p className="text-xs tracking-wider uppercase text-accent mb-1">
                   {project.category}
                 </p>
-                <h3 className="font-display text-xl group-hover:text-accent transition-colors">
+                <h3 className="font-display text-lg sm:text-xl group-hover:text-accent transition-colors">
                   {project.title}
                 </h3>
               </motion.div>
@@ -113,7 +113,7 @@ const Portfolio = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-6"
+            className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
@@ -126,23 +126,23 @@ const Portfolio = () => {
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
-                className="w-full h-auto max-h-[70vh] object-contain mb-6"
+                className="w-full h-auto max-h-[60vh] sm:max-h-[70vh] object-contain mb-4 sm:mb-6"
               />
               <div className="text-center">
-                <p className="text-xs tracking-wider uppercase text-accent mb-2">
+                <p className="text-xs tracking-wider uppercase text-accent mb-1 sm:mb-2">
                   {selectedProject.category}
                 </p>
-                <h3 className="font-display text-2xl mb-2">
+                <h3 className="font-display text-xl sm:text-2xl mb-1 sm:mb-2">
                   {selectedProject.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-sm sm:text-base text-muted-foreground px-4">
                   {selectedProject.description}
                 </p>
               </div>
             </motion.div>
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-8 right-8 text-muted-foreground hover:text-foreground text-sm tracking-wider uppercase"
+              className="absolute top-4 right-4 sm:top-8 sm:right-8 text-muted-foreground hover:text-foreground text-xs sm:text-sm tracking-wider uppercase"
             >
               Close
             </button>

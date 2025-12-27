@@ -12,28 +12,28 @@ const stats = [
 
 const About = () => {
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen pt-16 sm:pt-20 md:pt-24">
       {/* Header */}
-      <section className="section-padding py-16 md:py-24">
-        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-sm tracking-[0.3em] uppercase text-accent mb-4">
+            <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-accent mb-3 sm:mb-4">
               Our Story
             </p>
-            <h1 className="font-display text-5xl md:text-6xl mb-6">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6">
               About <span className="text-accent">Sadguru Digital</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-6">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-4 sm:mb-6">
               We believe every moment holds a story worth preserving — whether captured from the ground or from above.
             </p>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8">
               Founded by <span className="text-accent font-semibold">Arun Chavan</span>, Sadguru Digital was born from a deep passion for visual storytelling and a vision to bring world-class photography and drone services to Nandurbar. With years of experience and an eye for capturing the perfect moment, Arun has built a team that shares his commitment to excellence.
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-sm sm:text-base text-muted-foreground">
               Based in the heart of Nandurbar, we've grown from a small studio into a full-service creative powerhouse, serving clients across Maharashtra with professional photography, videography, and cutting-edge aerial drone services.
             </p>
           </motion.div>
@@ -54,9 +54,9 @@ const About = () => {
       </section>
 
       {/* Stats */}
-      <section className="section-padding py-16 bg-secondary/50">
+      <section className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 bg-secondary/50">
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -66,10 +66,10 @@ const About = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="text-center"
               >
-                <p className="font-display text-4xl md:text-5xl text-accent mb-2">
+                <p className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-accent mb-1 sm:mb-2">
                   {stat.value}
                 </p>
-                <p className="text-sm text-muted-foreground tracking-wider uppercase">
+                <p className="text-xs sm:text-sm text-muted-foreground tracking-wider uppercase">
                   {stat.label}
                 </p>
               </motion.div>
@@ -79,7 +79,7 @@ const About = () => {
       </section>
 
       {/* Meet the Founder */}
-      <section className="section-padding py-24">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -87,14 +87,14 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-sm tracking-[0.3em] uppercase text-accent mb-4">
+            <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-accent mb-3 sm:mb-4">
               Meet Our Founder
             </p>
-            <h2 className="font-display text-3xl md:text-4xl mb-8">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl mb-6 sm:mb-8">
               Arun Chavan
             </h2>
             
-            <div className="space-y-6 text-muted-foreground">
+            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base text-muted-foreground">
               <p>
                 Arun Chavan's journey into photography began with a simple belief: every moment deserves to be captured beautifully. What started as a hobby quickly transformed into a lifelong passion, and eventually, into Sadguru Digital.
               </p>
@@ -110,7 +110,7 @@ const About = () => {
       </section>
 
       {/* Philosophy */}
-      <section className="section-padding py-24 bg-secondary/50">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 bg-secondary/50">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -118,14 +118,14 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-sm tracking-[0.3em] uppercase text-accent mb-4">
+            <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-accent mb-3 sm:mb-4">
               Our Approach
             </p>
-            <h2 className="font-display text-3xl md:text-4xl mb-8">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl mb-6 sm:mb-8">
               The Art of Perspective
             </h2>
             
-            <div className="space-y-6 text-muted-foreground">
+            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base text-muted-foreground">
               <p>
                 Photography is more than pressing a button — it's about understanding light, emotion, and timing. Our approach combines technical mastery with artistic intuition, ensuring every shot tells a compelling story.
               </p>
@@ -141,24 +141,24 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="section-padding py-24">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 md:mb-16"
           >
-            <p className="text-sm tracking-[0.3em] uppercase text-accent mb-4">
+            <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-accent mb-3 sm:mb-4">
               What Drives Us
             </p>
-            <h2 className="font-display text-3xl md:text-4xl">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl">
               Our Values
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 title: "Excellence",
@@ -179,10 +179,10 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="text-center p-8 bg-secondary/50 rounded-xl"
+                className="text-center p-6 sm:p-8 bg-secondary/50 rounded-xl"
               >
-                <h3 className="font-display text-xl mb-4">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
+                <h3 className="font-display text-lg sm:text-xl mb-3 sm:mb-4">{value.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -190,7 +190,7 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding py-24 bg-secondary/50">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 bg-secondary/50">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -198,16 +198,16 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="max-w-2xl mx-auto text-center"
         >
-          <h2 className="font-display text-3xl md:text-4xl mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl mb-4 sm:mb-6">
             Let's Work Together
           </h2>
-          <p className="text-muted-foreground mb-10">
+          <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 md:mb-10 px-4">
             Ready to bring your vision to life? We'd love to hear about your project.
           </p>
-          <Button variant="hero" size="xl" asChild>
+          <Button variant="hero" size="xl" className="text-sm sm:text-base" asChild>
             <Link to="/contact">
               Start a Conversation
-              <ArrowRight size={16} />
+              <ArrowRight size={14} className="sm:w-4 sm:h-4" />
             </Link>
           </Button>
         </motion.div>

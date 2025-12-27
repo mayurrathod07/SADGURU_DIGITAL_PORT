@@ -41,15 +41,15 @@ export const Navigation = () => {
             : "bg-transparent"
         }`}
       >
-        <nav className="section-padding py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 group">
+        <nav className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-3 sm:py-4 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
             <motion.div
               whileHover={{ rotate: 15 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <Camera className="w-8 h-8 text-accent" />
+              <Camera className="w-6 h-6 sm:w-8 sm:h-8 text-accent" />
             </motion.div>
-            <span className="font-display text-xl tracking-wide">
+            <span className="font-display text-lg sm:text-xl tracking-wide">
               Sadguru<span className="text-accent"> Digital</span>
             </span>
           </Link>
@@ -105,8 +105,8 @@ export const Navigation = () => {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-background pt-24 md:hidden"
           >
-            <nav className="section-padding">
-              <ul className="flex flex-col gap-4">
+            <nav className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
+              <ul className="flex flex-col gap-3 sm:gap-4">
                 {navLinks.map((link, index) => (
                   <motion.li
                     key={link.path}
@@ -116,7 +116,7 @@ export const Navigation = () => {
                   >
                     <Link
                       to={link.path}
-                      className={`block px-6 py-4 rounded-xl font-display text-2xl transition-all ${
+                      className={`block px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-display text-xl sm:text-2xl transition-all ${
                         location.pathname === link.path
                           ? "bg-accent text-accent-foreground"
                           : "text-muted-foreground hover:bg-secondary hover:text-foreground"
