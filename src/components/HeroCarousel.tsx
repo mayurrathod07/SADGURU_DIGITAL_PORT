@@ -72,7 +72,7 @@ export const HeroCarousel = () => {
   }, [isAutoPlaying, next]);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen min-h-[600px] md:h-screen overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -107,17 +107,17 @@ export const HeroCarousel = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                className="text-xs sm:text-sm tracking-[0.3em] uppercase text-accent mb-3 sm:mb-4"
+                className="text-xs sm:text-sm tracking-[0.3em] uppercase text-accent mb-2 sm:mb-3 md:mb-4"
               >
                 Sadguru Digital
               </motion.p>
-              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-tight mb-2">
+              <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-medium leading-tight mb-1 sm:mb-2">
                 {slides[current].title}
               </h1>
-              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl italic text-accent mb-4 sm:mb-6">
+              <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl italic text-accent mb-3 sm:mb-4 md:mb-6">
                 {slides[current].subtitle}
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg mb-6 sm:mb-8">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-lg mb-4 sm:mb-6 md:mb-8">
                 {slides[current].description}
               </p>
             </motion.div>

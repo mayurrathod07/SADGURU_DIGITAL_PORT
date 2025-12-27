@@ -15,21 +15,21 @@ const Index = () => {
         <HeroCarousel />
         
         {/* CTA Buttons Overlay */}
-        <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24 left-0 right-0 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 z-10">
+        <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 xl:bottom-24 left-0 right-0 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 z-10">
           <div className="max-w-7xl mx-auto">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center sm:justify-start"
             >
-              <Button variant="hero" size="xl" className="text-sm sm:text-base" asChild>
+              <Button variant="hero" size="lg" className="text-sm sm:text-base w-full sm:w-auto" asChild>
                 <Link to="/portfolio">
                   <Camera size={16} className="sm:w-[18px] sm:h-[18px] mr-2" />
                   View Portfolio
                 </Link>
               </Button>
-              <Button variant="hero-outline" size="xl" className="text-sm sm:text-base" asChild>
+              <Button variant="hero-outline" size="lg" className="text-sm sm:text-base w-full sm:w-auto" asChild>
                 <Link to="/contact">Book a Shoot</Link>
               </Button>
             </motion.div>
@@ -58,7 +58,7 @@ const Index = () => {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             {/* Photography */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -146,17 +146,17 @@ const Index = () => {
             transition={{ duration: 4, repeat: Infinity }}
             className="inline-block mb-4 sm:mb-6"
           >
-            <Camera size={36} className="sm:w-12 sm:h-12 text-accent" />
+            <Camera size={32} className="sm:w-10 sm:h-10 md:w-12 md:h-12 text-accent" />
           </motion.div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 sm:mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6">
             Let's Create
             <br />
             <span className="italic text-accent">Something Beautiful</span>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 md:mb-10 max-w-xl mx-auto px-4">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 md:mb-10 max-w-xl mx-auto px-4">
             Whether it's a wedding, a commercial project, or aerial footage of your property — Sadguru Digital is here to bring your vision to life.
           </p>
-          <Button variant="hero" size="xl" className="text-sm sm:text-base" asChild>
+          <Button variant="hero" size="lg" className="text-sm sm:text-base w-full sm:w-auto" asChild>
             <Link to="/contact">
               Start a Project
               <ArrowRight size={14} className="sm:w-4 sm:h-4" />

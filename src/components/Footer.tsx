@@ -86,9 +86,9 @@ export const Footer = () => {
                   @sadguru_digital_nandurbar
                 </a>
               </li>
-              <li className="flex items-start gap-2 text-primary-foreground/70 text-sm">
-                <MapPin size={16} className="flex-shrink-0 mt-0.5" />
-                <span>Shop No. 108, Sairachana Plaza, Bus Stand Complex, Near Sadguru Computer & Minai Cyber Cafe, Nandurbar</span>
+              <li className="flex items-start gap-2 text-primary-foreground/70 text-xs sm:text-sm">
+                <MapPin size={14} className="flex-shrink-0 mt-0.5" />
+                <span>Shop No. 108, Sairachana Plaza,<br className="sm:hidden" /> Bus Stand Complex,<br />Near Sadguru Computer & Minai Cyber Cafe,<br />Nandurbar</span>
               </li>
             </ul>
           </div>

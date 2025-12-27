@@ -86,10 +86,10 @@ export const Navigation = () => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-full bg-secondary/80 text-foreground"
+              className="md:hidden p-2 rounded-full bg-secondary/80 text-foreground hover:bg-secondary transition-colors"
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </motion.button>
           </div>
         </nav>
